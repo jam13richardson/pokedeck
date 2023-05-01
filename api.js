@@ -13,15 +13,16 @@
 
 const fetchPokemon = (myPokemon) => {
  return fetch(`https://pokeapi.co/api/v2/pokemon/${myPokemon}`)
-    .then((response) => response.json())
+ .then((response) => response.json())
     .then((data) => {
-    let PokemonData = {
+    const PokemonData = {
       name: data.name,
       id: data.id,
       height: data.height,
       weight: data.weight
     };
-       console.log(PokemonData)
+    console.log(PokemonData)
+       return PokemonData
     })
   }
 
